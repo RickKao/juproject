@@ -26,5 +26,7 @@ Route::resource('ju_custom','ju_custom_Controller');
 Route::delete('ju_custom/{id}', 'ju_custom_Controller@destroy');
 
 // 寫入的表單
-Route::post('/store','ju_custom_Controller@store');
+Route::post('ju_custom/store','ju_custom_Controller@store');
 // 寫入的資料接到這個function
+
+Route::resource('Calcul_size','Calcul_size_Controller');
