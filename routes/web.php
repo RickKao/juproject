@@ -30,3 +30,4 @@ Route::post('ju_custom/store','ju_custom_Controller@store');
 // 寫入的資料接到這個function
 
 Route::resource('Calcul_size','Calcul_size_Controller');
+Route::post('Calcul_size/store','Calcul_size_Controller@store');
