@@ -6,6 +6,7 @@
         <meta charset="utf-8">
  
         @section('style')
+        <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
         @show
  
     </head>
