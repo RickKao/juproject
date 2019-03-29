@@ -37,26 +37,12 @@ class Calcul_size_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
         $input = Input::all();
-        foreach ($input as $key => $value) {
-                if($key != "_token"){
-                    foreach ($value as $connet) {
-                        echo $key."=".$connet;
-                        echo ",";
-                    }
-                echo "<br>";
-                echo "-----------------";
-                echo "<br>";
-                }
-                // foreach ($value as $test) {
-                // echo $test  ;
-                // }
-        }
-        // return array($input['w_size'],$input['h_size'],$input['windows_type']);
-        // return View('site.inputsize_layout.inputsize_show',
-        //     ['title' => '編輯文章'],
-        //     ['input' => $input]);
+        // 直接用二微陣列的鍵值來對應就好
+        $datacount = count($input["totalfour"]["windows_type"]);
+        return View('site.inputsize_layout.inputsize_show',
+                    ['datacount' => $datacount],
+                    ['input' => $input]);
     }
 
     /**
@@ -103,5 +89,6 @@ class Calcul_size_Controller extends Controller
     {
 
     }
+
 
 }
