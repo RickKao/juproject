@@ -15,19 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('ju_custom/show/{id}', 'ju_custom_Controller@show');
+Route::group(['prefix'=>'ju_custom'], function(){
+	Route::get('show/{id}', 'ju_custom_Controller@show');
+	Route::get('show/{id}/edit', 'ju_custom_Controller@edit');
+	Route::put('{id}', 'ju_custom_Controller@update');
+	Route::resource('/','ju_custom_Controller');
+	Route::delete('{id}', 'ju_custom_Controller@destroy');
+	Route::post('store','ju_custom_Controller@store');
+});
+// 這是範例的route
 
-Route::get('ju_custom/show/{id}/edit', 'ju_custom_Controller@edit');
 
-Route::put('ju_custom/{id}', 'ju_custom_Controller@update');
+route::group(['prefix'=>'Calcul_size'],function(){
+	Route::resource('/','Calcul_size_Controller');
+	Route::post('store','Calcul_size_Controller@store');
+});
 
-Route::resource('ju_custom','ju_custom_Controller');
-
-Route::delete('ju_custom/{id}', 'ju_custom_Controller@destroy');
-
-// 寫入的表單
-Route::post('ju_custom/store','ju_custom_Controller@store');
-// 寫入的資料接到這個function
-
-Route::resource('Calcul_size','Calcul_size_Controller');
-Route::post('Calcul_size/store','Calcul_size_Controller@store');
+// 這是計算的route
