@@ -29,7 +29,7 @@
         'four_pull_open_w' => '四拉開天活動', 
         'four_pull_open_t' => '四拉開天固定',
     ))}}
-    {{Form::select('totalfour[gauze_type][]',array(
+    沙網顏色:{{Form::select('totalfour[gauze_type][]',array(
         '還未確認' => '還未確認',
         '不編網' => '不編網',
         '灰網' => '灰網',

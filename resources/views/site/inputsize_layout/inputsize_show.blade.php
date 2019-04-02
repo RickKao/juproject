@@ -14,11 +14,13 @@
 			<div class="container">
 				@if($input["totalfour"]["windows_type"][$i] == "two_pull")
 				<div class="row">
-					<div class="col-sm-9">
+					<div class="col-sm-12">
 					<p>二拉窗</p>
 					<p>紗網顏色:{{$input["totalfour"]["gauze_type"][$i]}}</p>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
+					</div>
+					<div class="col-md-3">
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -38,7 +40,7 @@
 						</tbody>
 						</table>
 						</div>
-					<div class="col-md-4">	
+					<div class="col-md-3">	
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -70,7 +72,7 @@
 						</tbody>
 					</table>
 			</div>
-			<div class="col-md-4">	
+			<div class="col-md-3">	
 			<table class="table table-bordered">
 						<thead>
 							<tr>

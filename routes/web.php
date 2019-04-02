@@ -32,3 +32,13 @@ route::group(['prefix'=>'Calcul_size'],function(){
 });
 
 // 這是計算的route
+
+Route::group(['prefix'=>'ju_hardware'], function(){
+	Route::get('show/{id}', 'ju_hardware@show');
+	Route::get('show/{id}/edit', 'ju_hardware@edit');
+	Route::put('{id}', 'ju_hardware@update');
+	Route::resource('/','ju_hardware');
+	Route::delete('{id}', 'ju_hardware@destroy');
+	Route::post('store','ju_hardware@store');
+});
+// 這是範例的route
