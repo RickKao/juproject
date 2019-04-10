@@ -34,11 +34,21 @@ route::group(['prefix'=>'Calcul_size'],function(){
 // 這是計算的route
 
 Route::group(['prefix'=>'ju_hardware'], function(){
-	Route::get('show/{id}', 'ju_hardware@show');
-	Route::get('show/{id}/edit', 'ju_hardware@edit');
-	Route::put('{id}', 'ju_hardware@update');
-	Route::resource('/','ju_hardware');
-	Route::delete('{id}', 'ju_hardware@destroy');
-	Route::post('store','ju_hardware@store');
+	Route::get('show/{id}', 'ju_hardware_Controller@show');
+	Route::get('show/{id}/edit', 'ju_hardware_Controller@edit');
+	Route::put('{id}', 'ju_hardware_Controller@update');
+	Route::resource('/','ju_hardware_Controller');
+	Route::delete('{id}', 'ju_hardware_Controller@destroy');
+	Route::post('store','ju_hardware_Controller@store');
 });
-// 這是範例的route
+// 這是五金的route
+
+Route::group(['prefix'=>'ju_aluminum'], function(){
+	Route::get('show/{id}', 'ju_aluminum_Controller@show');
+	Route::get('show/{id}/edit', 'ju_aluminum_Controller@edit');
+	Route::put('{id}', 'jju_aluminum_Controller@update');
+	Route::resource('/','ju_aluminum_Controller');
+	Route::delete('{id}', 'ju_aluminum_Controller@destroy');
+	Route::post('store','ju_aluminum_Controller@store');
+});
+// 這是材料的route
